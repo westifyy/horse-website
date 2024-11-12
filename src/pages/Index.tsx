@@ -7,12 +7,18 @@ const Index = () => {
   const [selectedBreed, setSelectedBreed] = useState('');
   const [potkoviceValue, setPotkoviceValue] = useState(1);
   const [treningSelected, setTreningSelected] = useState(false);
+  const [basePrice, setBasePrice] = useState(0);
+
+  const handleBreedSelect = (breed: string, breedBasePrice: number = 0) => {
+    setSelectedBreed(breed);
+    setBasePrice(breedBasePrice);
+  };
 
   return (
     <div className="min-h-screen bg-accent">
       <Navigation
         selectedBreed={selectedBreed}
-        onBreedSelect={setSelectedBreed}
+        onBreedSelect={handleBreedSelect}
       />
       
       <main className="container mx-auto py-8 px-4">
@@ -34,6 +40,7 @@ const Index = () => {
                 potkoviceValue={potkoviceValue}
                 treningSelected={treningSelected}
                 selectedBreed={selectedBreed}
+                basePrice={basePrice}
               />
             </div>
           </div>
