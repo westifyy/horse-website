@@ -6,6 +6,7 @@ export interface HorseVariant {
     speed: number;
     turning: number;
   };
+  imageUrl: string;
 }
 
 export interface HorseBreed {
