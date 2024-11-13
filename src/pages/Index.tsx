@@ -36,7 +36,7 @@ const Index = () => {
                 <Card>
                   <CardContent className="p-4">
                     <img 
-                      src={selectedVariant.imageUrl} 
+                      src={new URL(selectedVariant.imageUrl, import.meta.url).href}
                       alt={`${selectedBreed} ${selectedVariant.name}`}
                       className="w-full h-auto rounded-lg shadow-lg"
                     />
