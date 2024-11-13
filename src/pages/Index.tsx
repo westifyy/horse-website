@@ -4,6 +4,7 @@ import ServiceSelector from '@/components/ServiceSelector';
 import PriceDisplay from '@/components/PriceDisplay';
 import HorseStats from '@/components/HorseStats';
 import type { HorseVariant } from '@/types/horse';
+import { Card, CardContent } from '@/components/ui/card';
 
 const Index = () => {
   const [selectedBreed, setSelectedBreed] = useState('');
@@ -32,6 +33,15 @@ const Index = () => {
             
             <div className="grid md:grid-cols-2 gap-8">
               <div className="space-y-8">
+                <Card>
+                  <CardContent className="p-4">
+                    <img 
+                      src={selectedVariant.imageUrl} 
+                      alt={`${selectedBreed} ${selectedVariant.name}`}
+                      className="w-full h-auto rounded-lg shadow-lg"
+                    />
+                  </CardContent>
+                </Card>
                 <HorseStats {...selectedVariant.stats} />
                 <ServiceSelector
                   potkoviceValue={potkoviceValue}
